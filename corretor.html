@@ -98,7 +98,7 @@
         <div class="col">
         </div>
           <div class="col-sm-5">  
-            <form>
+            <!--form>
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Digite seu email</label>
                 <input type="email" class="form-control" name="exampleInputEmail" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -120,12 +120,60 @@
               <div class="mb-3">
                 <label for="inputPassword5" class="form-label">CRECI</label>
                 <input type="password" id="inputPassword5" class="form-control" aria-labelledby="passwordHelpBlock">
-                <!--label for="exampleInputPassword1" class="form-label">CRECI</label-->
-                <!--input type="number" class="form-control" name="exampleInputPassword" id="exampleInputPassword1"-->
+                <label for="exampleInputPassword1" class="form-label">CRECI</label>
+                <input type="number" class="form-control" name="exampleInputPassword" id="exampleInputPassword1">
               <p></p>
               </div>
               <button id="btnCadastrar" type="button" class="btn-book-a-table" onclick="window.location.href='login.html'">Cadastrar</button>
-            </form>       
+            </form-->  
+            <form>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Digite seu email</label>
+                <input type="email" class="form-control" name="exampleInputEmail" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">E-mail de cadastro</div>
+              </div>
+              <div class="mb-3">
+                <label for="inputPassword5" class="form-label">Crie sua senha</label>
+                <input type="password" id="inputPassword5" class="form-control" aria-labelledby="passwordHelpBlock">
+                <div id="passwordHelpBlock" class="form-text">
+                  Sua senha deve ter de 8 a 20 caracteres, conter letras e números, e não deve conter espaços, caracteres especiais ou emojis.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Repita sua senha</label>
+                <input type="password" id="confirmPassword" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label for="creci" class="form-label">CRECI</label>
+                <input type="text" id="creci" class="form-control">
+              </div>
+              <p></p>
+              <button id="btnCadastrar" type="button" class="btn-book-a-table" onclick="validateForm()">Cadastrar</button>
+            </form>
+            
+            <script>
+              function validateForm() {
+                var email = document.getElementById("exampleInputEmail1").value;
+                var password = document.getElementById("inputPassword5").value;
+                var confirmPassword = document.getElementById("confirmPassword").value;
+                var creci = document.getElementById("creci").value;
+            
+                // Perform your form validation here
+                // You can use conditions and regular expressions to validate the input
+            
+                // Example validation: Check if the password and confirm password match
+                if (password !== confirmPassword) {
+                  alert("As senhas não correspondem!");
+                  return;
+                }
+            
+                // If all validations pass, proceed with form submission
+                // In this example, it shows a success message as an alert and then redirects to the login.html page
+                alert("Cadastro realizado com sucesso!");
+                window.location.href = "login.html";
+              }
+            </script>
+                 
           </div>
         <div class="col">   
         </div>    
