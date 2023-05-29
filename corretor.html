@@ -28,6 +28,9 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  
+
   
 
   <!-- Template Main CSS File -->
@@ -98,35 +101,8 @@
         <div class="col">
         </div>
           <div class="col-sm-5">  
+           
             <!--form>
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Digite seu email</label>
-                <input type="email" class="form-control" name="exampleInputEmail" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">E-mail de cadastro</div>
-              </div>
-              <div>
-                <label for="inputPassword5" class="form-label">Crie sua senha</label>
-                  <input type="password" id="inputPassword5" class="form-control" aria-labelledby="passwordHelpBlock">
-                  <div id="passwordHelpBlock" class="form-text">
-                    Sua senha deve ter de 8 a 20 caracteres, conter letras e números e não deve conter espaços, caracteres especiais ou emoji.
-                  </div>
-              </div>
-              <div class="mb-3">
-                      <label for="inputPassword5" class="form-label">Repita sua senha</label>
-                      <input type="password" id="inputPassword5" class="form-control" aria-labelledby="passwordHelpBlock">
-                      <div id="passwordHelpBlock" class="form-text">
-                      </div>     
-              </div>
-              <div class="mb-3">
-                <label for="inputPassword5" class="form-label">CRECI</label>
-                <input type="password" id="inputPassword5" class="form-control" aria-labelledby="passwordHelpBlock">
-                <label for="exampleInputPassword1" class="form-label">CRECI</label>
-                <input type="number" class="form-control" name="exampleInputPassword" id="exampleInputPassword1">
-              <p></p>
-              </div>
-              <button id="btnCadastrar" type="button" class="btn-book-a-table" onclick="window.location.href='login.html'">Cadastrar</button>
-            </form-->  
-            <form>
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Digite seu email</label>
                 <input type="email" class="form-control" name="exampleInputEmail" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -172,7 +148,95 @@
                 alert("Cadastro realizado com sucesso!");
                 window.location.href = "login.html";
               }
-            </script>
+            </script-->
+            
+<style>
+  .input-group {
+    position: relative;
+  }
+
+  .input-group i {
+    position: absolute;
+    right: 10px;
+    top: calc(50% - 0.5em);
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .input-group input[type="password"] {
+    padding-right: 2.5em;
+  }
+</style>
+
+<form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Digite seu email</label>
+    <input type="email" class="form-control" name="exampleInputEmail" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">E-mail de cadastro</div>
+  </div>
+  <div class="mb-3">
+    <label for="inputPassword5" class="form-label">Crie sua senha</label>
+    <div class="input-group">
+      <input type="password" id="inputPassword5" class="form-control" aria-labelledby="passwordHelpBlock">
+      <i id="toggleIcon" class="fas fa-eye"></i>
+    </div>
+    <div id="passwordHelpBlock" class="form-text">
+      Sua senha deve ter de 8 a 20 caracteres, conter letras e números, e não deve conter espaços, caracteres especiais ou emojis.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="confirmPassword" class="form-label">Repita sua senha</label>
+    <div class="input-group">
+      <input type="password" id="confirmPassword" class="form-control">
+      <i id="toggleIconConfirm" class="fas fa-eye"></i>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="creci" class="form-label">CRECI</label>
+    <input type="text" id="creci" class="form-control">
+  </div>
+  <p></p>
+  <button id="btnCadastrar" type="button" class="btn-book-a-table">Cadastrar</button>
+</form>
+
+<script>
+  function togglePasswordVisibility(inputId, toggleIconId) {
+    var passwordInput = document.getElementById(inputId);
+    var toggleIcon = document.getElementById(toggleIconId);
+
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+      toggleIcon.classList.remove("fa-eye");
+      toggleIcon.classList.add("fa-eye-slash");
+    } else {
+      passwordInput.type = "password";
+      toggleIcon.classList.remove("fa-eye-slash");
+      toggleIcon.classList.add("fa-eye");
+    }
+  }
+
+  document.getElementById("toggleIcon").addEventListener("click", function() {
+    togglePasswordVisibility("inputPassword5", "toggleIcon");
+  });
+
+  document.getElementById("toggleIconConfirm").addEventListener("click", function() {
+    togglePasswordVisibility("confirmPassword", "toggleIconConfirm");
+  });
+
+  document.getElementById("btnCadastrar").addEventListener("click", function() {
+    var password = document.getElementById("inputPassword5").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (password !== confirmPassword) {
+      alert("As senhas não correspondem!");
+      return;
+    }
+
+    alert("Cadastro realizado com sucesso!");
+    window.location.href = "login.html";
+  });
+</script>
+            
                  
           </div>
         <div class="col">   
