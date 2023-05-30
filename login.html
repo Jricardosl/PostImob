@@ -28,6 +28,7 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   
 
   <!-- Template Main CSS File -->
@@ -69,13 +70,14 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="index.html">Página Inicial</a></li>
+          <li><a href="index.html">Início</a></li>
           <li><a href="solucoes.html">Soluções</a></li>
           <li><a href="criaranuncios.html">Criar Anúncios</a></li>
           <li><a href="rededeamigos.html">Rede de Amigos</a></li>
           <li><a href="galeria.html">Galeria</a></li>
           <li><a href="encontreumimovel.html">Encontre um imóvel</a></li>
           <li><a href="corretor.html">Cadastro</a></li>
+          <li><a href="planos.html">Planos</a></li>
           <a class="btn-book-a-table" href="login.html">Login</a>
         </ul>
         
@@ -95,82 +97,54 @@
   <section id="hero" class="hero d-flex align-items-center section-bg">
     <div class="container">
       <div class="row justify-content-between gy-5">
-        <div class="col">
-        </div>
+        <div class="col"></div>
         <div class="col-sm-5">
           <h3>Faça seu login</h3>
           <p></p>
-          <!--form>
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Digite seu email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">E-mail de cadastro</div>
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Senha</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-              </div>
-              <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Mantenha-me conectado</label>
-              </div>
-              <button type="button" class="btn-book-a-table" onclick="window.location.href='index.html'">Entrar</button>
-          </form-->
-          <!--form>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Digite seu email</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text">E-mail de cadastro</div>
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Senha</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Mantenha-me conectado</label>
-            </div>
-            <button type="button" class="btn-book-a-table" onclick="showSuccessMessage()">Entrar</button>
-            <div id="successMessage" style="display: none; color: green;">Login realizado com sucesso!</div>
-          </form-->
-          
-          <!--script>
-            function showSuccessMessage() {
-              document.getElementById("successMessage").style.display = "block";
-            }
-          </script-->
           <form>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Digite seu email</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+              </div>
               <div id="emailHelp" class="form-text">E-mail de cadastro</div>
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Senha</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                <input type="password" class="form-control" id="exampleInputPassword1" required>
+              </div>
             </div>
             <div class="mb-3 form-check">
               <input type="checkbox" class="form-check-input" id="exampleCheck1">
               <label class="form-check-label" for="exampleCheck1">Mantenha-me conectado</label>
             </div>
-            <button type="button" class="btn-book-a-table" onclick="showSuccessMessage()">Entrar</button>
+            <button type="button" class="btn-book-a-table" onclick="validateForm()">Entrar</button>
           </form>
           
           <script>
-            function showSuccessMessage() {
+            function validateForm() {
+              var email = document.getElementById("exampleInputEmail1").value;
+              var password = document.getElementById("exampleInputPassword1").value;
+              
+              if (!email || !password) {
+                alert("Por favor, preencha todos os campos obrigatórios.");
+                return;
+              }
+              
               alert("Login realizado com sucesso!");
               window.location.href = "index.html";
             }
           </script>
-          
-          
-        </div>  
-        <div class="col">
-        </div>     
+        </div>
+        <div class="col"></div>
       </div>
     </div>
-    </div>
-  </section><!-- End Hero Section -->
+  </section>
+  
+  <!-- End Hero Section -->
 
   <footer id="footer" class="footer">
 
