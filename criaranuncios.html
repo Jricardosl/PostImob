@@ -287,6 +287,7 @@
 
               <div class="row mb-3">
                 <div class="col">
+                <!--Testar botão habilitar câmera traseira -->
                  <!-- <button id="btn-camera" type="button" onclick="getStream('video')">Habilitar Câmera</button> -->
                  <button type="button" onclick="getStream('video')" class="btn btn-success botao">Habilitar Câmera</button>
                 </div>
@@ -329,15 +330,6 @@
 
       
   
-     <!--div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Yummy</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div-->
   
     </footer>
 
@@ -359,35 +351,7 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <!--script>
-    let newWorker;
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js').then(reg => {
-        reg.addEventListener('updatefound', () => {
-          // A wild service worker has appeared in reg.installing!
-          newWorker = reg.installing;
-          newWorker.addEventListener('statechange', () => {
-            // Has network.state changed?
-            switch (newWorker.state) {
-              case 'installed':
-                if (navigator.serviceWorker.controller) {
-                  // new update available
-
-                }
-                // No update available
-                break;
-            }
-          });
-        });
-      });
-      let refreshing;
-      navigator.serviceWorker.addEventListener('controllerchange', function () {
-        if (refreshing) return;
-        window.location.reload();
-        refreshing = true;
-      });
-    }
-  </script-->
+  
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
   <script src="./assets/js/camera.js"></script>
   <script src="./assets/js/geolocalizacao.js"></script>

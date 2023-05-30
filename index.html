@@ -99,10 +99,6 @@
     <div class="container">
       <div class="row justify-content-between gy-5">
         <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
-          
-          <p></p>
-          <!--h2 data-aos="fade-up">Crie seus anúncios imobiliários de maneira prática e criativa.<br>Cada imóvel é único!
-          </h2-->
           <p data-aos="fade-up" data-aos-delay="100">Crie anúncios com poucos cliques, racionalize o seu tempo e otimize seus resultados.
           </p>
           <div class="container "> 
@@ -111,6 +107,10 @@
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Rua, bairro ou cidade" aria-label="Search">
                     </form>  
+                    <p></p>
+                    <form class="d-flex" role="search">
+                      <input class="form-control me-2" type="text" id="valor" placeholder="R$ 0,00" aria-label="Search">
+                    </form>                     
                 </div>
                 <p></p>
                 <div class="col-xs-4 col-lg-4">
@@ -135,6 +135,22 @@
         </div-->
       </div>
     </div>
+
+    <script>
+      const inputValor = document.getElementById('valor');
+    
+      inputValor.addEventListener('input', function(e) {
+        // Remove tudo, exceto os números do valor digitado
+        const valorDigitado = e.target.value.replace(/\D/g, '');
+    
+        // Formata o valor para o formato de moeda em reais
+        const valorFormatado = Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valorDigitado / 100);
+    
+        // Atualiza o campo de entrada com o valor formatado
+        e.target.value = valorFormatado;
+      });
+    </script>
+    
   </section><!-- End Hero Section -->
 
   <footer id="footer" class="footer">

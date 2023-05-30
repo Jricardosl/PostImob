@@ -44,3 +44,20 @@ function getStream (type) {
       alert('Error: ' + err);
     });
 }
+// função adicionada para habilitar câmera traseira
+function getStream(elementId, options) {
+  const videoElement = document.getElementById(elementId);
+
+  if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    navigator.mediaDevices.getUserMedia({
+      video: options, // Passa as opções para o objeto video
+      audio: false
+    })
+    .then(stream => {
+      videoElement.srcObject = stream;
+    })
+    .catch(error => {
+      console.error('Erro ao obter acesso à câmera:', error);
+    });
+  }
+}

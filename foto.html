@@ -11,7 +11,8 @@
 
     <div class="columns">
         <div class="column">
-          <p><button type="button" onclick="getStream('video')">Habilitar Câmera</button></p>
+          <button id="camera-back" type="button" onclick="getStream('video', { facingMode: 'environment' })">Habilitar Câmera Traseira</button>
+          <!--p><button type="button" onclick="getStream('video')">Habilitar Câmera</button></p-->
           <video autoplay style="height:180px; width: 240px;"></video>
           <button onclick="takePhoto()">Tirar Foto</button>
         </div>
